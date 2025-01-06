@@ -1,0 +1,16 @@
+<h1>New Game</h1>
+
+<ul>
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<p><%# @letters.join(' ') %></p>
+
+<form action="/score" method="POST" data-turbo="false">
+  <input type="text" name="word">
+  <input type="submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters%>
+</form>

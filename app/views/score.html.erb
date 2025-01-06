@@ -1,0 +1,11 @@
+<h1>Results</h1>
+
+<% if @valid_word  %>
+  <% if @english_word  %>
+    <p>Congratulations! <%= @word %> is a valid word!</p>
+  <% else %>
+    <p>Sorry but that <%= @word %> does not seem to be a valid English word!</p>
+  <% end %>
+<% else %>
+<p>Sorry but that cannot be built from <%= @word %></p>
+<% end %>
